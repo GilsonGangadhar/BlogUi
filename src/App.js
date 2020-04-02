@@ -10,8 +10,8 @@ function App(props){
    return(
        <BrowserRouter>
             <div>
-                <Link to="/">Home||</Link>
-                <Link to="/users">Users||</Link>
+                <Link to="/">Home--</Link>
+                <Link to="/users">Users--</Link>
                 <Link to="/posts">Posts</Link>
 
                 <Route path="/" component={Home} />
