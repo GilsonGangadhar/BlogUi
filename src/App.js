@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Home from './Home'
+import UsersList from './UsersList'
+import UserPost from './UserPost'
+import PostList from './PostList'
+import PostReview from './PostReview'
+import {BrowserRouter, Route, Link,} from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(props){
+   return(
+       <BrowserRouter>
+            <div>
+                <Link to="/">Home||</Link>
+                <Link to="/users">Users||</Link>
+                <Link to="/posts">Posts</Link>
+
+                <Route path="/" component={Home} />
+                <Route path="/users" component={UsersList} exact={true}/>
+                <Route path="/users/:id" component={UserPost} exact={true}/>
+                <Route path="/posts" component={PostList} exact={true} />
+                <Route path="/posts/:id" component={PostReview} />
+            </div>
+       </BrowserRouter>
+   )
 }
 
-export default App;
+export default App
